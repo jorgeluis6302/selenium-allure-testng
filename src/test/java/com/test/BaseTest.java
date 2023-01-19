@@ -15,13 +15,14 @@ public class BaseTest {
     CheckoutOrderAsCustomer objCheckout;
     Dotenv dotenv = Dotenv.load();
     String site;
+    ChromeDriverDirector driverOs;
 
     @Step("Start application.")
     @BeforeMethod
     public void setup() {
-        String site = dotenv.get("TEST_SITE_URL");
-        this.site = site;
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
+        this.site = dotenv.get("TEST_SITE_URL");
+        this.driverOs = new ChromeDriverDirector(dotenv.get("MY_OS"));
+        System.setProperty("webdriver.chrome.driver", this.driverOs.pick());
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 3);
         driver.get(this.site);
