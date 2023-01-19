@@ -72,6 +72,7 @@ public class CheckoutOrderAsCustomer {
     @Step("Go checkout page.")
     public void checkout(String site, String relativeCheckoutUrl) {
         driver.get(site + relativeCheckoutUrl);
+        this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".opc-progress-bar-item._active")));
         assertThat(driver.getTitle()).contains("Realizar Pedido");
     }
 }
