@@ -1,6 +1,6 @@
-package com.flowbo.test;
+package com.test;
 
-import com.flowbo.base.CheckoutOrderAsCustomer;
+import com.base.CheckoutOrderAsCustomer;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;

@@ -3,7 +3,7 @@
 <suite name="Acceptance Test">
     <test name="Pre-checkout order">
         <classes>
-            <class name="com.flowbo.test.CheckoutOrderAsCustomerTest" />
+            <class name="com.test.CheckoutOrderAsCustomerTest" />
         </classes>
     </test>
 </suite>

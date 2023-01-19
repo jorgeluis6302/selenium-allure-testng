@@ -1,4 +1,4 @@
-package com.flowbo.base;
+package com.base;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -1,6 +1,7 @@
-package com.flowbo.test;
+package com.test;
 
-import com.flowbo.base.CheckoutOrderAsCustomer;
+import com.drivers.ChromeDriverDirector;
+import com.base.CheckoutOrderAsCustomer;
 import io.github.cdimascio.dotenv.Dotenv;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
