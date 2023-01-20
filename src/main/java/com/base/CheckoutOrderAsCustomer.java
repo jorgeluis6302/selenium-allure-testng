@@ -55,9 +55,9 @@ public class CheckoutOrderAsCustomer {
     }
 
     @Step("Pick product from carrousel.")
-    public void pickProduct(Integer minimumPrice) {
+    public void pickProduct(Integer minimumPrice, Integer maximumPrice) {
         String query = String
-                .format("setTimeout(()=> { [...document.querySelectorAll(\".slick-active .price-wrapper\")].find(item => parseInt(item.innerText.split(\" \")[1]) >= %d).parentNode.parentNode.parentNode.parentNode.querySelector(\"button\").click(); }, 1500 );", minimumPrice);
+                .format("setTimeout(()=> { [...document.querySelectorAll(\".slick-active .price-wrapper\")].find(item => parseInt(item.innerText.split(\" \")[1]) >= %d && parseInt(item.innerText.split(\" \")[1]) <= %d).parentNode.parentNode.parentNode.parentNode.querySelector(\"button\").click(); }, 1500 );", minimumPrice, maximumPrice);
         JavascriptExecutor js = (JavascriptExecutor) this.driver;
         js.executeScript("window.scrollBy(0,870)");
         js.executeScript(query);
@@ -72,6 +72,7 @@ public class CheckoutOrderAsCustomer {
     @Step("Go checkout page.")
     public void checkout(String site, String relativeCheckoutUrl) {
         driver.get(site + relativeCheckoutUrl);
+        this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".opc-progress-bar-item._active")));
         assertThat(driver.getTitle()).contains("Realizar Pedido");
     }
 }
