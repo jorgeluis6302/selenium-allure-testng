@@ -8,8 +8,9 @@ Integrated frameworks/libraries:
 - TestNG
 - Allure
 
-## Setup test requirements 
-Depending your OS, [download](https://chromedriver.chromium.org/downloads) the chromedriver executable and paste it in the root path of the project.
+## Requirements 
+- [Download](https://docs.qameta.io/allure/#_installing_a_commandline) and install `allure` in your host machine.
+- Depending your OS, [download](https://chromedriver.chromium.org/downloads) the chromedriver executable and paste it in the root path of the project.
 
 Create `.env` file with next environment variables:
 ```yaml
@@ -36,3 +37,4 @@ mvn clean test
 ```
 allure serve
 ```
+_This will automatically open your default browser and show the test results._
