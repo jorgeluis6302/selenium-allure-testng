@@ -17,7 +17,7 @@ public class CheckoutOrderAsCustomerTest extends BaseTest {
         String pass = dotenv.get("TEST_USER_PASS");
         String relativeCheckoutUrl = "/checkout";
         Integer minimumPrice = 100;
-        Integer maximumPrice = 600;
+        Integer maximumPrice = 400;
         objCheckout = new CheckoutOrderAsCustomer(driver, wait);
         objCheckout.login(email, pass);
         objCheckout.pickProduct(minimumPrice, maximumPrice);
