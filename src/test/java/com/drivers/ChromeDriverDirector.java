@@ -14,7 +14,8 @@ public class ChromeDriverDirector {
 
     public void configure() {
         configuration.put("mac", new ChromeDriverMac("chromedriver"));
-        configuration.put("windows", new ChromeDriverWindows("windows"));
+        configuration.put("windows", new ChromeDriverWindows("chromedriver.exe"));
+        configuration.put("linux", new ChromeDriverLinux("chromedriver"));
     }
 
     public String pick() {
