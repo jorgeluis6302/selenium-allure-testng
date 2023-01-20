@@ -1,7 +1,5 @@
 package com.drivers;
 
-import com.drivers.ChromeDriverOs;
-
 public class ChromeDriverWindows implements ChromeDriverOs {
     private String fileName;
 
