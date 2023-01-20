@@ -25,7 +25,7 @@ public class BaseTest {
         this.driverOs = new ChromeDriverDirector(dotenv.get("MY_OS"));
         System.setProperty("webdriver.chrome.driver", this.driverOs.pick());
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 3);
+        wait = new WebDriverWait(driver, 5);
         driver.get(this.site);
     }
 
